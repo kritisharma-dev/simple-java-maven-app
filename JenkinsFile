@@ -9,5 +9,15 @@ pipeline {
 				bat 'mvn clean compile'
 			}
 		}
+		stage('Test') {
+			steps {
+				bat 'mvn clean test'
+			}
+		}
+		stage('Deploy') {
+			steps {
+				bat 'mvn clean install'
+			}
+		}
 	}
 }
